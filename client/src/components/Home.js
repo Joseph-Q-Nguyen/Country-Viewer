@@ -12,7 +12,7 @@ function Home() {
   
   let api = "https://restcountries.com/v3.1/all"
 
-  if (search !== "null") 
+  if (search && search !== "null") 
   {
     api = "https://restcountries.com/v3.1/name/" + search;
   } 
@@ -27,7 +27,7 @@ function Home() {
       .then((data) => {
         console.log(api)
         
-        if (Array.isArray(data) && region !== "null") {
+        if (Array.isArray(data) && region && region !== "null") {
           console.log("Filtering");
           data = data.filter(d => d.region.toLowerCase() === region.toLowerCase());
         }
