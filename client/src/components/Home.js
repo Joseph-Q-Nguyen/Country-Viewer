@@ -12,13 +12,9 @@ function Home() {
   
   let api = "https://restcountries.com/v3.1/all"
 
-  if (search) 
+  if (search !== "null") 
   {
     api = "https://restcountries.com/v3.1/name/" + search;
-  } 
-  else if (region) 
-  {
-    api = "https://restcountries.com/v3.1/region/" + region;
   } 
 
   const [status, setStatus] = React.useState(false);
@@ -29,7 +25,9 @@ function Home() {
     fetch(api)
       .then((res) => res.json())
       .then((data) => {
-        if (Array.isArray(data) && region && region != "null") {
+        console.log(api)
+        
+        if (Array.isArray(data) && region !== "null") {
           console.log("Filtering");
           data = data.filter(d => d.region.toLowerCase() === region.toLowerCase());
         }
