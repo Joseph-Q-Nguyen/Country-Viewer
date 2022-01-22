@@ -6,10 +6,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import Home from './components/Home'
-import Country from './components/Country'
-import Navbar from 'react-bootstrap/Navbar'
-import Container from 'react-bootstrap/Container'
+import Home from './components/Home';
+import Country from './components/Country';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import { DEPLOYMENT_URL } from './Constants';
 
 function App() {
   const src = require('./globe.png');
@@ -19,7 +20,7 @@ function App() {
   
   React.useEffect(() => {
     if (searched) {
-      window.location.href = "http://localhost:3000/?search=" + value 
+      window.location.href = DEPLOYMENT_URL + "/?search=" + value 
       + "&region=" + region;
     }
     

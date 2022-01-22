@@ -1,8 +1,7 @@
 import React from "react";
-import Card from 'react-bootstrap/Card'
-import Spinner from 'react-bootstrap/Spinner'
 import { useSearchParams } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CountryList from './CountryList';
 
 
 function Home() {
@@ -53,28 +52,7 @@ function Home() {
         </div> :
         <div>
           <h1>Countries:</h1>
-          {
-            data ? data.map((d) => {
-              return (
-                <div key={ d.name.common }>
-                  <div 
-                    className="card" key={ d.name.common }
-                  >
-                    <Card onClick={event =>  window.location.href='http://localhost:3000/country/' + d.ccn3} style={{width: "100%", }}>
-                      <Card.Img variant="top" src={ d.flags.png } />
-                      <Card.Body>
-                        <Card.Title>{ d.name.official }</Card.Title>
-                      </Card.Body>
-                    </Card>
-                  </div>
-                  <br/>
-                </div>  
-              )
-            }) :
-            <Spinner animation="border" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </Spinner>
-          }
+          <CountryList data={ data }/>
         </div>
       }
     </div>
