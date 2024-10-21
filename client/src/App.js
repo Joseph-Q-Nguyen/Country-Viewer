@@ -23,7 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar className="nav-bar" variant="light" sticky="top">
+      Boi
+      {/* <Navbar className="nav-bar" variant="light" sticky="top">
         <Container>
           <Navbar.Brand href="/">
             <img
@@ -71,7 +72,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/country/:code" element={<Country />} />
         </Routes>
-      </Router>
+      </Router> */}
     </div>
   );
 }
