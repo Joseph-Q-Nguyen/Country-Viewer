@@ -23,7 +23,6 @@ function App() {
 
   return (
     <div className="App">
-      Boi
       <Navbar className="nav-bar" variant="light" sticky="top">
         <Container>
           <Navbar.Brand href="/">
