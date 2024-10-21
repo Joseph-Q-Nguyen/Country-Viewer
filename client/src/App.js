@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
       Boi
-      {/* <Navbar className="nav-bar" variant="light" sticky="top">
+      <Navbar className="nav-bar" variant="light" sticky="top">
         <Container>
           <Navbar.Brand href="/">
             <img
@@ -66,13 +66,12 @@ function App() {
           </form>
         </Container>
       </Navbar>
-
       <Router>
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/country/:code" element={<Country />} />
         </Routes>
-      </Router> */}
+      </Router>
     </div>
   );
 }
